@@ -4,4 +4,11 @@ module CardData
 
   SUITS_VALUES = SUITS.each_with_index.to_h.freeze
   RANKS_VALUES = RANKS.each_with_index.to_h.freeze
+
+  SUITS_HASH = {
+    1 => '❤️',
+    2 => '♦️',
+    3 => '♣️',
+    4 => '♠️'
+  }.freeze
 end
