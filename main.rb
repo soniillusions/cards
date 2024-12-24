@@ -22,14 +22,6 @@ class Main
     end
   end
 
-  # Temporary method for development
-  def show_deck
-    deck.each do |card|
-      card.show_data
-      puts ''
-    end
-  end
-
   def show_deck_format
     hearts = deck.select {|card| card.suit == '❤️'}
     puts "❤️: #{hearts.size}"
@@ -52,12 +44,24 @@ class Main
     sorted = []
     sort_order.each do |suit|
       suits = deck.select {|card| card.suit == suit }
-      suits_by_value =suits.sort_by {|card| card.value }
-      suits_sort = suits_by_value.map {|card| card.show}
-      sorted += suits_sort
+      suits_by_value = suits.sort_by {|card| card.value }
+      sorted += suits_by_value
     end
 
-    puts sorted.join(', ')
+    self.deck = sorted
+    show_deck
+    puts ''
+  end
+
+  def show_deck
+    puts deck.map {|card| card.show}.join(', ')
+  end
+
+  def show_deck_details
+    deck.each do |card|
+      card.show_data
+      puts ''
+    end
   end
 
   def change_sort
@@ -105,6 +109,78 @@ class Main
 
     self.sort_order = order
   end
+
+  def bin_search
+    deck.sort_by! {|card| card.value}
+
+    search_suit = ''
+    search_rank = ''
+
+    puts 'Укажите масть: '
+    puts '1 - ❤️'
+    puts '2 - ♦️'
+    puts '3 - ♣️'
+    puts '4 - ♠️'
+    suit = gets.to_i
+
+    loop do
+      if suit < 1 || suit > 4
+        puts 'Ошибка! Введите корректное значение'
+      else
+        search_suit = SUITS_HASH[suit]
+        break
+      end
+    end
+
+    puts 'Укажите значение: '
+    puts '1 => 2'
+    puts '2 => 3'
+    puts '3 => 4'
+    puts '4 => 5'
+    puts '5 => 6'
+    puts '6 => 7'
+    puts '7 => 8'
+    puts '8 => 9'
+    puts '9 => 10'
+    puts '10 => Jack'
+    puts '11 => Queen'
+    puts '12 => King'
+    puts '13 => Ace'
+
+    rank = gets.to_i
+
+    loop do
+      if rank < 1 || rank > 13
+        puts 'Ошибка! Введите корректное значение'
+      else
+        search_rank = RANKS_HASH[rank]
+        break
+      end
+    end
+
+    search_value = SUITS_VALUES[search_suit] * RANKS.size + RANKS_VALUES[search_rank]
+
+    low = 0
+    high = deck.size - 1
+
+    found = false
+
+    while low <= high
+      mid = (low + high) / 2
+
+      if deck[mid].value > search_value
+        high = mid - 1
+      elsif deck[mid].value < search_value
+        low = mid + 1
+      else
+        puts "Такая карта есть в коллоде!"
+        found = true
+        break
+      end
+    end
+
+    puts 'Такой карты нет в коллоде!' unless found
+  end
 end
 
 main = Main.new
@@ -112,6 +188,11 @@ main.create_cards(10)
 main.show_deck_format
 puts ''
 
-main.change_sort
-
+# main.change_sort
 main.sort
+
+puts 'Вы хотите найти карту? '
+print 'введите Y/N: '
+answer = gets.chomp.capitalize
+
+answer == 'Y' ? main.bin_search : false
