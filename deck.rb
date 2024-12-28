@@ -4,6 +4,7 @@ class Deck
   require_relative 'bin_search'
   require_relative 'deck_printer'
   require_relative 'deck_sorter'
+  
   include CardData
   include BinSearch
   include DeckPrinter

@@ -9,10 +9,10 @@ module BinSearch
     search_rank = ''
 
 
-    puts '1 - ❤️'
-    puts '2 - ♦️'
-    puts '3 - ♣️'
-    puts '4 - ♠️'
+    puts 'введите: 1 -> ❤️'
+    puts 'введите: 2 -> ♦️'
+    puts 'введите: 3 -> ♣️'
+    puts 'введите: 4 -> ♠️'
     print 'Укажите масть: '
 
     loop do
@@ -26,25 +26,27 @@ module BinSearch
       end
     end
 
-    puts '1 - 2'
-    puts '2 - 3'
-    puts '3 - 4'
-    puts '4 - 5'
-    puts '5 - 6'
-    puts '6 - 7'
-    puts '7 - 8'
-    puts '8 - 9'
-    puts '9 - 10'
-    puts '10 - Jack'
-    puts '11 - Queen'
-    puts '12 - King'
-    puts '13 - Ace'
+    puts ''
+
+    puts 'введите: 2 -> 2'
+    puts 'введите: 3 -> 3'
+    puts 'введите: 4 -> 4'
+    puts 'введите: 5 -> 5'
+    puts 'введите: 6 -> 6'
+    puts 'введите: 7 -> 7'
+    puts 'введите: 8 -> 8'
+    puts 'введите: 9 -> 9'
+    puts 'введите: 10 -> 10'
+    puts 'введите: 11 -> Jack'
+    puts 'введите: 12 -> Queen'
+    puts 'введите: 13 -> King'
+    puts 'введите: 14 -> Ace'
     print 'Укажите значение: '
 
     loop do
       rank = gets.to_i
 
-      if rank < 1 || rank > 13
+      if rank < 2 || rank > 14
         print 'Ошибка! Введите корректное значение: '
       else
         search_rank = RANKS_HASH[rank]
