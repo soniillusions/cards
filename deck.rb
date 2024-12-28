@@ -19,6 +19,11 @@ class Deck
   end
 
   def create_cards(amount)
+    if amount > 52
+      puts 'Ошибка, вы не можете создать больше чем 52 карты'
+      exit
+    end
+
     while deck.size < amount
       new_card = Card.new
       new_value = new_card.value
@@ -33,14 +38,8 @@ end
 deck = Deck.new
 deck.create_cards(10)
 deck.show_deck_format
-puts ''
 
 deck.change_sort
-puts ''
 deck.sort
 
-puts 'Вы хотите найти карту? '
-print 'введите Y/N: '
-answer = gets.chomp.capitalize
-
-answer == 'Y' ? deck.bin_search : false
+deck.bin_search

@@ -16,6 +16,7 @@ module DeckSorter
   end
 
   def change_sort
+    puts ''
     puts 'Вы хотите сменить порядок сортировки?'
     print 'введите Y/N: '
 
@@ -32,6 +33,7 @@ module DeckSorter
         print 'Ошибка! Введите "Y" или "N": '
       end
     end
+    puts ''
   end
 
   def change_sort!
