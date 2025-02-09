@@ -1,28 +1,28 @@
-# cards
+# Cards
 
-Это простой проект для работы с картами. В нем реализованы основные операции с картами, такие как сортировка, проверка уникальности. Программа может быть использована как для создания карточных колод, так и для разработки карточных игр.
+This is a simple project for working with playing cards. It implements basic card operations such as sorting and checking for uniqueness. The program can be used both for creating card decks and developing card games.
 
-## Установка
+## Installation
 
-1. Склонируйте репозиторий:
+1. Clone the repository:
     ```bash
     git clone https://github.com/soniillusions/cards.git
     ```
 
-2. Перейдите в папку проекта:
+2. Navigate to the project folder:
     ```bash
     cd cards
     ```
 
-3. Запустите программу:
+3. Run the program:
     ```bash
     ruby deck.rb
     ```
 
-## Возможности:
-1. **Сортировка карт**: Возможность сортировать карты по номиналу или масти.
-2. **Проверка на уникальность**: Программа автоматически проверяет, нет ли в колоде карт с одинаковым значением.
-3. **Добавление и удаление карт**: Легко добавлять новые карты в колоду или удалять существующие.
-4. **Поддержка стандартных мастей и рангов**: Карты делятся на 4 масти (черви, бубны, трефы, пики) и 13 рангов (от 2 до туза).
-5. **Визуализация колоды**: Возможность выводить колоду карт в удобном формате
+## Features:
+1. **Card Sorting**: Ability to sort cards by rank or suit.
+2. **Uniqueness Check**: The program automatically checks for duplicate cards in the deck.
+3. **Adding and Removing Cards**: Easily add new cards to the deck or remove existing ones.
+4. **Support for Standard Suits and Ranks**: Cards are divided into 4 suits (hearts, diamonds, clubs, spades) and 13 ranks (from 2 to Ace).
+5. **Deck Visualization**: Ability to display the deck in a convenient format.
 
