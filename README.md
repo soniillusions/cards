@@ -2,6 +2,16 @@
 
 This is a simple project for working with playing cards. It implements basic card operations such as sorting and checking for uniqueness. The program can be used both for creating card decks and developing card games.
 
+Creates a deck of 10 random cards. You can adjust this number in the deck.rb file on line 39:
+<p align="center">
+<img src="https://github.com/user-attachments/assets/fd6deb26-9619-4688-a90b-59d8af65e2bd">
+</p>
+
+You can change the sorting order and also search for a card in the deck:
+<p align="center">
+<img src="https://github.com/user-attachments/assets/d3e0626a-0d75-4cf3-8499-670eae7b532b">
+</p>
+
 ## Installation
 
 1. Clone the repository:
