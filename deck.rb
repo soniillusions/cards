@@ -20,7 +20,7 @@ class Deck
 
   def create_cards(amount)
     if amount > 52
-      puts 'Ошибка, вы не можете создать больше чем 52 карты'
+      puts "Error: You can't create more than 52 cards."
       exit
     end
 

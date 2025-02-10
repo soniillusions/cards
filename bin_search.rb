@@ -3,8 +3,8 @@ module BinSearch
   include CardData
 
   def bin_search
-    puts 'Вы хотите найти карту? '
-    print 'введите Y/N: '
+    puts 'Do you want to find a cart?'
+    print 'Enter Y/N: '
     answer = gets.chomp.capitalize
 
     if answer == 'Y'
@@ -14,17 +14,17 @@ module BinSearch
       search_rank = ''
 
 
-      puts 'введите: 1 -> ❤️'
-      puts 'введите: 2 -> ♦️'
-      puts 'введите: 3 -> ♣️'
-      puts 'введите: 4 -> ♠️'
-      print 'Укажите масть: '
+      puts 'Enter: 1 -> ❤️'
+      puts 'Enter: 2 -> ♦️'
+      puts 'Enter: 3 -> ♣️'
+      puts 'Enter: 4 -> ♠️'
+      print 'Set suit: '
 
       loop do
         suit = gets.to_i
 
         if suit < 1 || suit > 4
-          print 'Ошибка! Введите корректное значение: '
+          print 'Error! Please enter a valid value!'
         else
           search_suit = SUITS_HASH[suit]
           break
@@ -33,26 +33,26 @@ module BinSearch
 
       puts ''
 
-      puts 'введите: 2 -> 2'
-      puts 'введите: 3 -> 3'
-      puts 'введите: 4 -> 4'
-      puts 'введите: 5 -> 5'
-      puts 'введите: 6 -> 6'
-      puts 'введите: 7 -> 7'
-      puts 'введите: 8 -> 8'
-      puts 'введите: 9 -> 9'
-      puts 'введите: 10 -> 10'
-      puts 'введите: 11 -> Jack'
-      puts 'введите: 12 -> Queen'
-      puts 'введите: 13 -> King'
-      puts 'введите: 14 -> Ace'
-      print 'Укажите значение: '
+      puts 'Enter: 2 -> 2'
+      puts 'Enter: 3 -> 3'
+      puts 'Enter: 4 -> 4'
+      puts 'Enter: 5 -> 5'
+      puts 'Enter: 6 -> 6'
+      puts 'Enter: 7 -> 7'
+      puts 'Enter: 8 -> 8'
+      puts 'Enter: 9 -> 9'
+      puts 'Enter: 10 -> 10'
+      puts 'Enter: 11 -> Jack'
+      puts 'Enter: 12 -> Queen'
+      puts 'Enter: 13 -> King'
+      puts 'Enter: 14 -> Ace'
+      print 'Enter the value: '
 
       loop do
         rank = gets.to_i
 
         if rank < 2 || rank > 14
-          print 'Ошибка! Введите корректное значение: '
+          print 'Error! Please enter a valid value!'
         else
           search_rank = RANKS_HASH[rank]
           break
@@ -75,13 +75,13 @@ module BinSearch
         elsif deck[mid].value < search_value
           low = mid + 1
         else
-          puts "#{search_card} - Такая карта есть в коллоде!"
+          puts "#{search_card} - This card is already in the deck!"
           found = true
           break
         end
       end
 
-      puts "#{search_card} - Такой карты нет в коллоде!" unless found
+      puts "#{search_card} - This card is not in the deck!" unless found
     else
       false
     end

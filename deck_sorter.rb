@@ -17,8 +17,8 @@ module DeckSorter
 
   def change_sort
     puts ''
-    puts 'Вы хотите сменить порядок сортировки?'
-    print 'введите Y/N: '
+    puts 'Do you want to change the sorting order?'
+    print 'Enter Y/N: '
 
     loop do
       answer = gets.chomp.capitalize
@@ -30,7 +30,7 @@ module DeckSorter
         change_sort!
         break
       else
-        print 'Ошибка! Введите "Y" или "N": '
+        print 'Error! Enter "Y" or "N": '
       end
     end
     puts ''
@@ -40,7 +40,7 @@ module DeckSorter
     order = []
     old_answers = []
 
-    puts 'Установите порядок: '
+    puts 'Set the order: '
     puts '1 - ❤️'
     puts '2 - ♦️'
     puts '3 - ♣️'
@@ -48,11 +48,11 @@ module DeckSorter
 
     (1..4).each do |i|
       loop do
-        print "Укажите масть для #{i} позиции: "
+        print "Choose the suit for position #{i}: "
         answer = gets.to_i
 
         if (answer < 1 || answer > 4) && !old_answers.include?(answer)
-          puts 'Ошибка! Введите корректное значение'
+          puts 'Error! Please enter a valid value!'
         else
           old_answers << answer
           order << SUITS_HASH[answer]
